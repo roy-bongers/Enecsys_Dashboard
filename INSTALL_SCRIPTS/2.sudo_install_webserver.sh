@@ -20,14 +20,7 @@ echo "Here we go"
 echo "Step 1: install php, apache, mysql"
 
 sleep 1
-sudo apt-get -y install apache2 php php-mcrypt php-mysql php-curl php-gd php-json mysql-server 
-
-sleep 2
-echo "-------------------------------------------------------------"
-echo "Step 2: enable php module mcrypt"
-
-sleep 1
-sudo phpenmod mcrypt
+sudo apt-get -y install apache2 php php-mysql php-curl php-gd php-json mariadb-server
 
 echo "mariaDB will now be secured. When this installation is done the new Mysql ROOT password will be displayed. Make sure to copy it!!"
 
