@@ -13,8 +13,6 @@
 
 	if ($InverterCheck->num_rows == 0) {
 	// no alerts. table can be cleaned of faulty inverters
-		echo "NO errors found: <br />";
-
 		$InvAlertDelete = "DELETE from alerts where device = 'Inverter' ";
 
 		$result = $connect->query($InvAlertDelete);
