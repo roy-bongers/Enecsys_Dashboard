@@ -57,7 +57,7 @@ else {
 							</div>
 							<div class="x_content">
                 <div class="embed-responsive embed-responsive-16by9">
-	                <iframe class="embed-responsive-item" src="http://www.pvoutput.org/list.jsp?id=<?php echo $PvId; ?>&sid=<?php echo $PvSystemId; ?>"></iframe>
+	                <iframe class="embed-responsive-item" src="https://www.pvoutput.org/list.jsp?id=<?php echo $PvId; ?>&sid=<?php echo $PvSystemId; ?>"></iframe>
 	              </div>
 							</div>
 						</div>
