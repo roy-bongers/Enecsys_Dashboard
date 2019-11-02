@@ -37,7 +37,7 @@
 			AS tmp
 			WHERE NOT EXISTS (SELECT DATE(ts), id FROM enecsys_report WHERE DATE(ts) = '$NewDate')";
 
-			$result = mysqli_query($connect, $input) or trigger_error ("Query failed. Error: " . mysqli_error($mysqli), E_USER_ERROR);
+			$result = mysqli_query($connect, $input) or trigger_error ("Query failed. Error: " . mysqli_error($connect), E_USER_ERROR);
 			$nrrows = mysqli_affected_rows($connect);
 
 			if ($DEBUG == 1) {	
@@ -66,7 +66,7 @@
 				
 				$DelQuery = "DELETE FROM enecsys where DATE(ts) = '$DelDate' ";
 
-				$result2 = mysqli_query($connect, $DelQuery) or trigger_error ("Query failed. Error: " . mysqli_error($mysqli), E_USER_ERROR);
+				$result2 = mysqli_query($connect, $DelQuery) or trigger_error ("Query failed. Error: " . mysqli_error($connect), E_USER_ERROR);
 				$nrrows2 = mysqli_affected_rows($connect);
 				
 				if ($DEBUG == 1) {
@@ -92,7 +92,7 @@
 		//extra delete check. Delete everything older then current day minus 5 days
 		$DelQuery2 = "DELETE FROM enecsys where DATE(ts) < DATE_ADD((SELECT MAX(DATE(ts)) FROM enecsys_report), INTERVAL -5 DAY)";
 
-		$result3 = mysqli_query($connect, $DelQuery2) or trigger_error ("Query failed. Error: " . mysqli_error($mysqli), E_USER_ERROR);
+		$result3 = mysqli_query($connect, $DelQuery2) or trigger_error ("Query failed. Error: " . mysqli_error($connect), E_USER_ERROR);
 		$nrrows3 = mysqli_affected_rows($connect);
 		
 		if ($DEBUG == 1) {
@@ -114,4 +114,3 @@
 	}
 
 	mysqli_close($connect);
-?>
