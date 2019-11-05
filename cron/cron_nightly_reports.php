@@ -16,7 +16,7 @@
 	(PHP_SAPI !== 'cli' || isset($_SERVER['HTTP_USER_AGENT'])) && die('cli only - not possible to run from browser');
 
 	//Want to see results on CLI? Set this variable to 1
-	$DEBUG = 1;
+	$DEBUG = 0;
 		
 	
 	//this query will collect data from everything OLDER then today.
@@ -102,9 +102,6 @@
 			else {
 				echo "Database is clean!" . PHP_EOL;
 			}
-		}
-		else {
-			//show nothing	
 		}
 	}
 
