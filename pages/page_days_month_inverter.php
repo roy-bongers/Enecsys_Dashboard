@@ -77,7 +77,6 @@
 		}
 	});
 </script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 <body class="nav-md">
 <!-- sidebar menu -->

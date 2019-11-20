@@ -21,7 +21,7 @@
 
 	//get results based on year from GET
 	$query = mysqli_query($connect,"select date_format(ts, '%d-%m') as day, sum(whtotal) as power from enecsys_report
-		where date_format(ts, '%m') = $getCurrentMonth and year(ts) = $getCurrentYear and id = $inverter group by day(ts)");
+		where date_format(ts, '%m') = $getCurrentMonth and year(ts) = $getCurrentYear and id = $inverter group by `day`");
 	$j = 0;
 	while($row = mysqli_fetch_assoc($query)){
 		//highcharts needs name, but only once, so give a IF condition

@@ -33,7 +33,7 @@
 
 			//loop get all results
 		$MonthHistory = mysqli_query($connect, "SELECT month(ts) as month, id, sum(whtotal) as whtotal, AVG(avgtemp) as avgtemp FROM enecsys_report
-					  WHERE id = $Inverter and year(ts) = $CurrentYear AND month(ts) = $month order by month(ts)");
+					  WHERE id = $Inverter and year(ts) = $CurrentYear AND month(ts) = $month GROUP BY month(ts) order by month(ts)");
 
 		if ($MonthHistory->num_rows > 0) {
 				while ($row = mysqli_fetch_array($MonthHistory)) {

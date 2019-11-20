@@ -8,10 +8,10 @@
       die("Redirecting to ". $DOCUMENT_ROOT . "/index.php");
   }
 	$getCurrentYear = date("Y");
-	$getYear = mysqli_query($connect,"select date_format(ts, '%Y')as year from enecsys_report group by year(ts)");
+	$getYear = mysqli_query($connect,"select date_format(ts, '%Y')as year from enecsys_report group by `year`");
 	//check how to select year and month. for now 2016
-	$getMonth = mysqli_query($connect,"select date_format(ts, '%m') as month, date_format(ts, '%b')as month2 from enecsys_report where date_format(ts, '%Y') = $getCurrentYear group by month(ts) ");
-	$getDay = mysqli_query($connect,"select date_format(ts, '%d')as day from enecsys_report group by day(ts)");
+	$getMonth = mysqli_query($connect,"select date_format(ts, '%m') as month, date_format(ts, '%b')as month2 from enecsys_report where date_format(ts, '%Y') = $getCurrentYear group by `month`, `month2`");
+	$getDay = mysqli_query($connect,"select date_format(ts, '%d')as day from enecsys_report group by `day`");
 
 	$CurrentMonth = date("m");
 	$CurrentMonthName = date("F, Y");

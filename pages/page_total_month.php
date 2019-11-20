@@ -7,9 +7,9 @@
 	    die("Redirecting to ". $DOCUMENT_ROOT . "/index.php");
 	}
 
-	$getYear = mysqli_query($connect,"select date_format(ts, '%Y')as year from enecsys_report group by year(ts)");
-	$getMonth = mysqli_query($connect,"select date_format(ts, '%b')as year from enecsys_report group by month(ts)");
-	$getDay = mysqli_query($connect,"select date_format(ts, '%d')as day from enecsys_report group by day(ts)");
+	$getYear = mysqli_query($connect,"select date_format(ts, '%Y')as year from enecsys_report group by `year`");
+	$getMonth = mysqli_query($connect,"select date_format(ts, '%b')as month from enecsys_report group by `month`");
+	$getDay = mysqli_query($connect,"select date_format(ts, '%d')as day from enecsys_report group by `day`");
 ?>
 
 <?php include ("../header.php"); ?>

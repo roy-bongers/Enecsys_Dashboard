@@ -69,7 +69,7 @@ if ($Temperature->num_rows > 0) {
 							$week = $row['week'];
 				      		//loop get all results
 							$WeekHistory = mysqli_query($connect, "SELECT week(ts) as wk, id, sum(whtotal) as whtotal, AVG(avgtemp) as avgtemp FROM enecsys_report
-				            WHERE id = 0 and year(ts) = $CurrentYear AND week(ts) = $week order by week(ts)");
+				            WHERE id = 0 and year(ts) = $CurrentYear AND week(ts) = $week GROUP BY week(ts) order by week(ts)");
 
 				        	if ($WeekHistory->num_rows > 0) {
 								while ($row = mysqli_fetch_array($WeekHistory)) {
